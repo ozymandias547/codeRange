@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+<style>
+	.code {
+		min-width: 500px;
+		min-height: 100px;
+	}
+	.passed {
+		color: green;
+	}
+	.failed, .error {
+		color: red;
+	}
+</style>
+<body>
+
+	{% for category in model %}
+        <h1>{{loop.key}}:</h1>
+		<ol>
+			{% for challenge in category %}
+				<li><a href="{{challenge.url}}">{{challenge.name}}</a></li>
+			{% endfor %}
+		</ol>
+	{% endfor %}
+
+</body>
+</html>
